@@ -1,0 +1,167 @@
+@import '../breakpoints/media-queries';
+
+   /************************************/
+  /*********** 1 Header Menu Css*******/
+ /************************************/
+ .al_header_section{
+   background: linear-gradient(to right,#00095e 0%,#0c0c1f 100%);
+   .menuarea{
+      .logo{
+         width: 100%;
+         height: 100%;
+         @include desktop{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0px;
+         }
+         a{
+            img{
+               width: 70%;
+               height: 100%;
+               object-fit: cover;
+            }
+           }
+         .mobile_menu{
+            display: none;
+            @include desktop{
+               display: block;
+            }
+            a{
+               display: block;
+               i{
+                  width: 40px;
+                  height: 40px;
+                  font-size: 20px;
+                  border:2px solid #fff;
+                  color:#ff4495;
+                  text-align: center;
+                  border-radius: 5px;
+                  line-height: 34px;
+               }
+            }
+         } 
+          
+      }
+      .menu{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         @include desktop_large{
+            display: flex;
+         }
+         .menu_item{
+            ul{
+               display: flex;
+               align-items: center;
+               @include desktop{
+                  flex-direction: column;
+               }
+                  li{
+                     margin:0px 14px;
+                     @include desktop{
+                        margin: 0;
+                     }
+                     a{
+                        font-weight: $fweight5;
+                        color:$cwhite;
+                        font-size: $fsize16;
+                        padding:30px 10px;
+                        display: block;
+                        transition: .3s;
+                        text-transform: capitalize;
+                        position: relative;
+                        overflow: hidden;
+                        @include desktop{
+                           padding: 10px 0px;
+                        }
+                        &::after{
+                           content: "";
+                           position:absolute;
+                           height: 3px;
+                           z-index: 1;
+                           background: $cwhite;
+                           bottom: 16px;
+                           transition: all .4s ease-out 0s;
+                           left:-100%;
+                        }
+                        &:hover::after{
+                           left: 0;
+                           right: auto;
+                           width: 100%;
+                           transition: all .4s ease-out 0s;
+                        }
+                     }
+                  }
+                  
+            }
+         }
+         .al_quote_button{
+            ul{
+               li{
+                  a{
+                     font-size: $fsize16;
+                     color:$cwhite;
+                     font-weight: $fweight5;
+                     border:2px solid $cwhite;
+                     padding:10px 20px;
+                     text-transform: capitalize;
+                     display: inline-block;
+                     border-radius: 25px;
+                     position: relative;
+                     overflow: hidden;
+                     z-index: 1;
+                     @include desktop{
+                        display: inline-block;
+                     }
+                     &::before{
+                        content: "";
+                        position: absolute;
+                        background: $cwhite;
+                        transition: .3s;
+                        top:-100%;
+                        transition: .3s;
+                        z-index: -1;
+                     }
+                     &:hover::before{
+                        top:0;
+                        width: 100%;
+                        height: 100%;
+                        left:0;
+                        transition: .3s;
+                     }
+                     &:hover{
+                        color:#ff4495;
+                     }
+                  }
+                  
+               }
+            }
+         } 
+         @include desktop{
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            border-radius:0px 0px 10px 10px;
+            padding: 2rem 0rem;
+            background: #ff498f;
+            z-index: 10;
+        }
+        @include desktop{
+            text-align: center;
+        } 
+       }
+   }
+}
+.fixedMenu{
+   position: fixed;
+   width: 100%;
+   z-index: 999;
+   top: 0;
+   left: 0;
+   background: linear-gradient(to right, #00095e 0%, #0c0c1f 100%);
+   border-bottom: 1px solid #f7f7f7;
+    
+}
